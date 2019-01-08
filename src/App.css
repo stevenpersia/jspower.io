@@ -1,32 +1,262 @@
-.App {
-  text-align: center;
+/* Fonts */
+@import url('./assets/fonts/jspower.css');
+
+/* Global */
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	background: #fbfbfd;
+	color: #6b6c6f;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body input,
+body button,
+body textarea {
+	color: #3e3f42;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	margin: 0;
+	line-height: 1.5;
+	font-weight: 400;
+	color: #3e3f42;
 }
 
-.App-link {
-  color: #61dafb;
+body h1 + p,
+body h2 + p,
+body h3 + p,
+body h4 + p,
+body h5 + p,
+body h6 + p {
+	margin-top: 0.3em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body * + h1,
+body * + h2,
+body * + h3,
+body * + h4,
+body * + h5 {
+	margin-top: 1.125rem;
+}
+
+body p {
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	margin: 0;
+	line-height: 1.375rem;
+	font-weight: 400;
+	font-size: 0.875rem;
+	color: #9ea0a5;
+}
+
+body h1 {
+	font-size: 2.25rem;
+	font-weight: 600;
+}
+
+body h2 {
+	font-size: 1.375rem;
+	line-height: 2rem;
+}
+
+body h3 {
+	font-size: 1.125rem;
+}
+
+body h4 {
+	font-size: 1.1rem;
+}
+
+body p + *,
+body ul + *,
+body ol + * {
+	margin-top: 1.125em;
+}
+
+body p + p {
+	margin-top: 0.4em;
+}
+
+body a {
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+body p a,
+body ul a {
+	display: inline-block;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	color: #1665d8;
+}
+
+body p a:hover,
+body ul a:hover {
+	text-decoration: underline;
+}
+
+body strong {
+	font-weight: 500;
+}
+
+body ul,
+body ol {
+	line-height: 1.5;
+	color: #3e3f42;
+	font-size: 0.875rem;
+}
+
+body ul *:not(:last-child),
+body ol *:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+body ol {
+	padding-left: 20px;
+}
+
+body ul.no-style {
+	list-style: none;
+	padding-left: 0;
+}
+
+body ul.no-style ul {
+	padding-left: 20px;
+}
+
+body code:not([class]) {
+	display: inline-block;
+	background: #fbfbfd;
+	border: 1px solid #dadee7;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 0.875rem;
+	color: #34aa44;
+	line-height: 1.375rem;
+	padding: 4px 12px;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Colors */
+.green {
+	color: #38b249;
+}
+
+.blue {
+	color: #1665d8;
+}
+
+.orange {
+	color: #f6ab2f;
+}
+
+.violet {
+	color: #6977ff;
+}
+
+.yellow {
+	color: #facf55;
+}
+
+.red {
+	color: #e6492d;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).green {
+	border: 1px solid #38b249;
+	color: #38b249;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).blue {
+	border: 1px solid #1665d8;
+	color: #1665d8;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).orange {
+	border: 1px solid #f6ab2f;
+	color: #f6ab2f;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).violet {
+	border: 1px solid #6977ff;
+	color: #6977ff;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).yellow {
+	border: 1px solid #facf55;
+	color: #facf55;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).red {
+	border: 1px solid #e6492d;
+	color: #e6492d;
+}
+
+.uik-tag__wrapper:not(.uik-tag__fill).white {
+	border: 1px solid white;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.green {
+	background: #38b249;
+	border: 1px solid #38b249;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.blue {
+	background: #1665d8;
+	border: 1px solid #1665d8;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.orange {
+	background: #f6ab2f;
+	border: 1px solid #f6ab2f;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.violet {
+	background: #6977ff;
+	border: 1px solid #6977ff;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.yellow {
+	background: #facf55;
+	border: 1px solid #facf55;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.red {
+	background: #e6492d;
+	border: 1px solid #e6492d;
+	color: white;
+}
+
+.uik-tag__wrapper.uik-tag__fill.white {
+	background: white;
+	color: black;
 }

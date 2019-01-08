@@ -1,0 +1,206 @@
+import React, { Component, Fragment } from 'react';
+import Grid from '@material-ui/core/Grid';
+import { NavLink, withRouter } from 'react-router-dom';
+import DabAudio from '../../../assets/eastereggs/puissance.mp3';
+import DabImage from '../../../assets/eastereggs/dab2.gif';
+import axios from 'axios';
+import Drawer from '@material-ui/core/Drawer';
+import MenuIcon from '@material-ui/icons/Menu';
+import './styles.css';
+
+class SidebarDirectory extends Component {
+	state = {
+		categories: [],
+		dab: [],
+		left: false
+	};
+
+	puissance = () => {
+		let key = [68, 65, 66];
+		let ck = 0;
+		let max = key.length;
+		let data = DabImage;
+		document.addEventListener('keydown', function(e) {
+			if (e.which === key[ck]) {
+				ck++;
+			} else {
+				ck = 0;
+			}
+			if (ck >= max) {
+				document.getElementById('audio').play();
+				ck = 0;
+
+				var img = new Image();
+				img.src = data;
+				img.style.width = '500px';
+				img.style.height = '281px';
+				img.style.transition = '1s all';
+				img.style.position = 'fixed';
+				img.style.right = '0';
+				img.style.bottom = '0';
+				img.style.zIndex = 999999;
+
+				document.body.appendChild(img);
+
+				window.setTimeout(function() {
+					img.parentNode.removeChild(img);
+				}, 2300);
+			}
+		});
+	};
+
+	onLogOut = e => {
+		this.props.logOut();
+		this.props.history.push('/');
+	};
+
+	// Render all categories
+	renderCategories = () => {
+		const allCategories = [];
+		for (let i = 0; i < this.state.categories.length; i++) {
+			let color = '#' + this.state.categories[i].color;
+			allCategories.push(
+				<NavLink
+					to={{ pathname: '/categories/' + this.state.categories[i]._id }}
+					className="sidebar-link"
+					key={[i]}
+					activeClassName="active"
+				>
+					<div>
+						<i
+							className="icon-logo"
+							style={{ verticalAlign: 'middle', color: color }}
+						/>
+						<span className="sidebar-link__text">
+							{this.state.categories[i].title}
+						</span>
+					</div>
+					<span className="sidebar-link__number">
+						{this.state.categories[i].links.length}
+					</span>
+				</NavLink>
+			);
+		}
+		return allCategories;
+	};
+
+	renderAccountNav = () => {
+		if (this.props.user && this.props.user.token) {
+			return (
+				<Fragment>
+					<NavLink
+						to={{ pathname: '/add-link' }}
+						className="sidebar-link"
+						activeClassName=""
+					>
+						<div>
+							<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
+							<span className="sidebar-link__text">Add a link</span>
+						</div>
+					</NavLink>
+					<NavLink
+						to={{ pathname: '/create-category' }}
+						className="sidebar-link"
+						activeClassName=""
+					>
+						<div>
+							<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
+							<span className="sidebar-link__text">Create a category</span>
+						</div>
+					</NavLink>
+					<NavLink
+						to={{ pathname: '/' }}
+						onClick={() => this.onLogOut()}
+						className="sidebar-link"
+						activeClassName=""
+					>
+						<div>
+							<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
+							<span className="sidebar-link__text">Log out</span>
+						</div>
+					</NavLink>
+				</Fragment>
+			);
+		} else {
+			return (
+				<NavLink
+					to={{ pathname: '/login' }}
+					className="sidebar-link"
+					activeClassName=""
+				>
+					<div>
+						<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
+						<span className="sidebar-link__text">Log in</span>
+					</div>
+				</NavLink>
+			);
+		}
+	};
+
+	toggleDrawer = (side, open) => () => {
+		this.setState({ ...this.state, [side]: open });
+	};
+
+	render() {
+		return (
+			<Grid item xs={12} md={3} className="sidebar">
+				{this.puissance()}
+				<audio id="audio">
+					<source src={DabAudio} type="audio/mp3" />
+				</audio>
+
+				<div className="logo">
+					<a href="/">
+						<i className="icon-logo hot" />
+						<h2 className="top-bar__title">JSPOWER.IO</h2>
+						<span className="version">βeta</span>
+					</a>
+				</div>
+
+				<a href="/" onClick={this.toggleDrawer('left', true)}>
+					<div className="burger">
+						<MenuIcon />
+					</div>
+				</a>
+				<Drawer
+					open={this.state.left}
+					onClose={this.toggleDrawer('left', false)}
+				>
+					<div
+						tabIndex={0}
+						role="button"
+						onClick={this.toggleDrawer('left', false)}
+						onKeyDown={this.toggleDrawer('left', false)}
+						style={{ width: 280 }}
+					>
+						<span className="sidebar-section__title">All categories</span>
+						{this.renderCategories()}
+						{this.renderAccountNav()}
+					</div>
+				</Drawer>
+				<section className="sidebar-section categories">
+					<span className="sidebar-section__title">All categories</span>
+					{this.renderCategories()}
+				</section>
+				<section className="sidebar-section account">
+					{this.renderAccountNav()}
+				</section>
+			</Grid>
+		);
+	}
+
+	componentDidMount() {
+		axios
+			.get('http://localhost:3001/api/categories/')
+			.then(response => {
+				this.setState({
+					categories: response.data
+				});
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	}
+}
+
+export default withRouter(SidebarDirectory);

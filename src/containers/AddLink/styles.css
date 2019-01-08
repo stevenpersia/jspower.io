@@ -1,0 +1,14 @@
+.button-send {
+	background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+	border-radius: 3px;
+	border: 0;
+	color: white;
+	height: 48;
+	padding: 20px 30px;
+	width: 100%;
+}
+
+.button-send:hover {
+	background: #3e3f42;
+	transition: 0.5s;
+}
