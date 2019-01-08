@@ -157,11 +157,14 @@ class SidebarDirectory extends Component {
 					</a>
 				</div>
 
-				<a href="/" onClick={this.toggleDrawer('left', true)}>
+				<span
+					onClick={this.toggleDrawer('left', true)}
+					style={{ cursor: 'pointer' }}
+				>
 					<div className="burger">
 						<MenuIcon />
 					</div>
-				</a>
+				</span>
 				<Drawer
 					open={this.state.left}
 					onClose={this.toggleDrawer('left', false)}

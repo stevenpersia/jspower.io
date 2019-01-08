@@ -24,7 +24,7 @@ class DirectoryListing extends Component {
 					/>
 				);
 			}
-			return links;
+			return links.reverse();
 		}
 	};
 

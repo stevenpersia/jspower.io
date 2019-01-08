@@ -110,12 +110,7 @@
 .version {
 	color: #818b9e;
 	font-size: 11px;
-	margin-left: 48px;
-	/* margin-top: -7px; */
-	display: inline-flex;
-	position: absolute;
-	/* vertical-align: top; */
-	top: 80px;
+	margin-top: -8px;
 }
 
 .hot {
