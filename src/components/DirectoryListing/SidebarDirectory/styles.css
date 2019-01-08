@@ -2,6 +2,8 @@
 .sidebar {
 	background: white;
 	border-right: 1px solid #eaedf3;
+	border-bottom: 1px solid #eaedf3;
+	padding-bottom: 15px;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -149,6 +151,10 @@
 	}
 	.logo {
 		margin-bottom: 0;
+	}
+	.sidebar {
+		border: 0;
+		padding-bottom: 0;
 	}
 }
 
