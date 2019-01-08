@@ -45,7 +45,7 @@ class Home extends Component {
 	}
 	componentDidMount() {
 		axios
-			.get('http://localhost:3001/api/links/')
+			.get('https://jspower-api.herokuapp.com/api/links/')
 			.then(response => {
 				this.setState({
 					allLinks: response.data

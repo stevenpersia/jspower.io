@@ -30,7 +30,7 @@ class CreateCategory extends Component {
 		if (this.state.title && this.state.description && this.state.color) {
 			axios
 				.post(
-					'http://localhost:3001/api/categories/',
+					'https://jspower-api.herokuapp.com/api/categories/',
 					{
 						title: this.state.title,
 						description: this.state.description,

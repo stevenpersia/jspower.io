@@ -28,7 +28,7 @@ class LogIn extends Component {
 	onSubmit = e => {
 		if (this.state.email && this.state.password) {
 			axios
-				.post('http://localhost:3001/api/users/log_in', {
+				.post('https://jspower-api.herokuapp.com/api/users/log_in', {
 					account: {
 						email: this.state.email,
 						password: this.state.password

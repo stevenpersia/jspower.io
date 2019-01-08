@@ -45,7 +45,10 @@ class DirectoryListing extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:3001/api/categories/' + this.props.match.params.id)
+			.get(
+				'https://jspower-api.herokuapp.com/api/categories/' +
+					this.props.match.params.id
+			)
 			.then(response => {
 				this.setState({
 					categoryLinks: response.data.links
@@ -63,7 +66,8 @@ class DirectoryListing extends Component {
 		) {
 			axios
 				.get(
-					'http://localhost:3001/api/categories/' + this.props.match.params.id
+					'https://jspower-api.herokuapp.com/api/categories/' +
+						this.props.match.params.id
 				)
 				.then(response => {
 					this.setState({

@@ -191,7 +191,7 @@ class SidebarDirectory extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:3001/api/categories/')
+			.get('https://jspower-api.herokuapp.com/api/categories/')
 			.then(response => {
 				this.setState({
 					categories: response.data

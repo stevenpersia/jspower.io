@@ -43,7 +43,7 @@ class AddLink extends Component {
 		) {
 			axios
 				.post(
-					'http://localhost:3001/api/links/',
+					'https://jspower-api.herokuapp.com/api/links/',
 					{
 						title: this.state.title,
 						description: this.state.description,
@@ -169,7 +169,7 @@ class AddLink extends Component {
 			this.redirectToLoginPage();
 		} else {
 			axios
-				.get('http://localhost:3001/api/categories/')
+				.get('https://jspower-api.herokuapp.com/api/categories/')
 				.then(response => {
 					this.setState({
 						listCategories: response.data
