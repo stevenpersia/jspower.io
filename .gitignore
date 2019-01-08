@@ -21,7 +21,9 @@ yarn-error.log*
 .vscode
 
 # Production mode
-src/*
-public/*
-build/static/css/*.map
-build/static/js/*.map
+/build
+
+# src/*
+# public/*
+# build/static/css/*.map
+# build/static/js/*.map
