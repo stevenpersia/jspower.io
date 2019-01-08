@@ -32,12 +32,12 @@ class SidebarDirectory extends Component {
 
 				var img = new Image();
 				img.src = data;
-				img.style.width = '500px';
-				img.style.height = '281px';
+				img.style.width = '25%';
+				img.style.height = '141px';
 				img.style.transition = '1s all';
 				img.style.position = 'fixed';
-				img.style.right = '0';
-				img.style.bottom = '0';
+				img.style.left = '0';
+				img.style.top = '0';
 				img.style.zIndex = 999999;
 
 				document.body.appendChild(img);
