@@ -152,6 +152,10 @@
 	.logo {
 		margin-bottom: 0;
 	}
+	.sidebar {
+		border: 0;
+		padding-bottom: 0;
+	}
 }
 
 @media all and (min-width: 960px) {
