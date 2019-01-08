@@ -8,7 +8,7 @@
 
 JSPOWER.IO is a library of links for JavaScript, ReactJS, NodeJS, React Native and other stuff. Hope you'll enjoy it !
 
-![](https://github.com/stevenpersia/jspower.io/blob/master/src/assets/images/preview-jspower.png)
+[![](https://github.com/stevenpersia/jspower.io/blob/master/src/assets/images/preview-jspower.png)](http://www.jspower.io)
 
 ---
 
