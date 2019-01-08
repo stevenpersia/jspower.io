@@ -122,18 +122,7 @@ class SidebarDirectory extends Component {
 				</Fragment>
 			);
 		} else {
-			return (
-				<NavLink
-					to={{ pathname: '/login' }}
-					className="sidebar-link"
-					activeClassName=""
-				>
-					<div>
-						<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
-						<span className="sidebar-link__text">Log in</span>
-					</div>
-				</NavLink>
-			);
+			return;
 		}
 	};
 
@@ -187,6 +176,17 @@ class SidebarDirectory extends Component {
 				</section>
 				<section className="sidebar-section account">
 					{this.renderAccountNav()}
+					<a
+						rel="noopener noreferrer"
+						href="https://github.com/stevenpersia/"
+						target="_blank"
+						className="sidebar-link"
+					>
+						<div>
+							<i className="icon-logo" style={{ verticalAlign: 'middle' }} />
+							<span className="sidebar-link__text">Made by Steven Persia</span>
+						</div>
+					</a>
 				</section>
 			</Grid>
 		);
