@@ -18,7 +18,7 @@ See website : http://www.jspower.io
 
 ---
 
-### Todos
+## Todos
 
  - Signup feature
  - Add link feature (for members)
