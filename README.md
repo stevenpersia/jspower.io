@@ -18,8 +18,19 @@ See website : http://www.jspower.io
 
 ---
 
+## Features
+
+- Register feature
+- Authentication feature
+- Submission link feature (for admin)
+- Create unlimited categories with custom color (for admin)
+- And many more...
+
+---
+
 ## Todos
 
  - Signup feature
- - Add link feature (for members)
+ - Submission link feature with admin approval feature (for members)
+ - Manage your own profile (email address, password, delete account)
  - GitHub authentication
