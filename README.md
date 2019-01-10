@@ -16,8 +16,6 @@ JSPOWER.IO is a library of links for JavaScript, ReactJS, NodeJS, React Native a
 
 See website : http://www.jspower.io
 
----
-
 ## Features
 
 - Register feature
@@ -25,8 +23,6 @@ See website : http://www.jspower.io
 - Submission link feature (for admin)
 - Create unlimited categories with custom color (for admin)
 - And many more...
-
----
 
 ## Todos
 
