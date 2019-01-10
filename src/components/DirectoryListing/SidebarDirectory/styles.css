@@ -14,13 +14,13 @@
 }
 
 /* TITLE */
-.sidebar-section__title {
+.sidebar-section__title,
+.sidebar-all-links {
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 0.75rem;
 	color: #9ea0a5;
 	line-height: 1.5;
-	display: block;
 	padding: 10px 30px;
 }
 
@@ -67,6 +67,12 @@
 	background: #eaedf3;
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
+}
+
+.sidebar-section-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .logo {

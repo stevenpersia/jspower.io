@@ -84,6 +84,14 @@ class SidebarDirectory extends Component {
 		return allCategories;
 	};
 
+	renderTotalOfLinks = () => {
+		let totalOfLinks = 0;
+		for (let i = 0; i < this.state.categories.length; i++) {
+			totalOfLinks += this.state.categories[i].links.length;
+		}
+		return totalOfLinks;
+	};
+
 	renderAccountNav = () => {
 		if (this.props.user && this.props.user.token) {
 			return (
@@ -165,13 +173,23 @@ class SidebarDirectory extends Component {
 						onKeyDown={this.toggleDrawer('left', false)}
 						style={{ width: 280 }}
 					>
-						<span className="sidebar-section__title">All categories</span>
+						<div className="sidebar-section-head">
+							<span className="sidebar-section__title">All categories</span>
+							<span className="sidebar-all-links">
+								{this.renderTotalOfLinks()}
+							</span>
+						</div>
 						{this.renderCategories()}
 						{this.renderAccountNav()}
 					</div>
 				</Drawer>
 				<section className="sidebar-section categories">
-					<span className="sidebar-section__title">All categories</span>
+					<div className="sidebar-section-head">
+						<span className="sidebar-section__title">All categories</span>
+						<span className="sidebar-all-links">
+							{this.renderTotalOfLinks()}
+						</span>
+					</div>
 					{this.renderCategories()}
 				</section>
 				<section className="sidebar-section account">
