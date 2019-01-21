@@ -26,7 +26,5 @@ See website : http://www.jspower.io
 
 ## Todos
 
- - Signup feature
  - Submission link feature with admin approval feature (for members)
- - Manage your own profile (email address, password, delete account)
  - GitHub authentication
