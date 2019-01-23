@@ -21,6 +21,7 @@ class Home extends Component {
 						url={this.state.allLinks[i].url}
 						vote={this.state.allLinks[i].vote}
 						category={this.state.allLinks[i].category.title}
+						iconColor={this.state.allLinks[i].category.color}
 					/>
 				);
 			}

@@ -17,6 +17,14 @@ class DirectoryItem extends Component {
 				<Card className="item">
 					<CardContent>
 						<h4>{this.props.title}</h4>
+						<i
+							className="icon-logo"
+							style={{
+								verticalAlign: 'middle',
+								color: '#' + this.props.iconColor,
+								fontSize: 14
+							}}
+						/>
 						<span className="category">{this.props.category}</span>
 						<p>{this.props.description}</p>
 					</CardContent>
