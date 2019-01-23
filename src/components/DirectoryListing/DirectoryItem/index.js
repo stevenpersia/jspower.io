@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './styles.css';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
@@ -17,15 +17,20 @@ class DirectoryItem extends Component {
 				<Card className="item">
 					<CardContent>
 						<h4>{this.props.title}</h4>
-						<i
-							className="icon-logo"
-							style={{
-								verticalAlign: 'middle',
-								color: '#' + this.props.iconColor,
-								fontSize: 14
-							}}
-						/>
-						<span className="category">{this.props.category}</span>
+						{!this.props.noIcon ? (
+							<Fragment>
+								<i
+									className="icon-logo"
+									style={{
+										verticalAlign: 'middle',
+										color: '#' + this.props.iconColor,
+										fontSize: 14
+									}}
+								/>
+								<span className="category">{this.props.category}</span>
+							</Fragment>
+						) : null}
+
 						<p>{this.props.description}</p>
 					</CardContent>
 					<a

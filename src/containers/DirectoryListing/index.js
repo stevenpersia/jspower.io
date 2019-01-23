@@ -21,6 +21,7 @@ class DirectoryListing extends Component {
 						description={this.state.categoryLinks[i].description}
 						url={this.state.categoryLinks[i].url}
 						vote={this.state.categoryLinks[i].vote}
+						noIcon
 					/>
 				);
 			}
