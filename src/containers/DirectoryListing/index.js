@@ -61,16 +61,14 @@ class DirectoryListing extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (
-			this.props.match.params.id !== prevProps.match.params.id ||
-			this.state.categoryLinks !== prevState
-		) {
+		if (this.props.match.params.id !== prevProps.match.params.id) {
 			axios
 				.get(
 					'https://jspower-api.herokuapp.com/api/categories/' +
 						this.props.match.params.id
 				)
 				.then(response => {
+					console.log(response.data);
 					this.setState({
 						categoryLinks: response.data.links
 					});
