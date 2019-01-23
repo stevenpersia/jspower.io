@@ -20,6 +20,7 @@ class Home extends Component {
 						description={this.state.allLinks[i].description}
 						url={this.state.allLinks[i].url}
 						vote={this.state.allLinks[i].vote}
+						category={this.state.allLinks[i].category.title}
 					/>
 				);
 			}

@@ -17,6 +17,7 @@ class DirectoryItem extends Component {
 				<Card className="item">
 					<CardContent>
 						<h4>{this.props.title}</h4>
+						<span className="category">{this.props.category}</span>
 						<p>{this.props.description}</p>
 					</CardContent>
 					<a
